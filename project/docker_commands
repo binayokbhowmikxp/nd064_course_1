@@ -1,11 +1,39 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+docker build -t techtrends .
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+docker container run -itd -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+docker container logs 5e0a0775ea47
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+docker container logs 5e0a0775ea47
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+2022-01-25 19:29:04,006 INFO werkzeug :  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+2022-01-25 19:32:23,472 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:32:23] "GET / HTTP/1.1" 200 -
+2022-01-25 19:32:37,661 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:32:37] "GET / HTTP/1.1" 200 -
+2022-01-25 19:32:38,071 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:32:38] "GET /static/css/main.css HTTP/1.1" 200 -
+2022-01-25 19:32:38,615 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:32:38] "GET /favicon.ico HTTP/1.1" 404 -
+2022-01-25 19:34:50,759 DEBUG app : 2020 CNCF Annual Report retrieved!
+2022-01-25 19:34:50,762 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:34:50] "GET /1 HTTP/1.1" 200 -
+2022-01-25 19:34:54,533 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:34:54] "GET / HTTP/1.1" 200 -
+2022-01-25 19:34:56,205 DEBUG app : KubeCon + CloudNativeCon 2021 retrieved!
+2022-01-25 19:34:56,206 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:34:56] "GET /2 HTTP/1.1" 200 -
+2022-01-25 19:34:58,534 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:34:58] "GET / HTTP/1.1" 200 -
+2022-01-25 19:35:02,929 DEBUG app : Aboout Us Page is retrieved!
+2022-01-25 19:35:02,931 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:35:02] "GET /about HTTP/1.1" 200 -
+2022-01-25 19:35:04,894 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:35:04] "GET / HTTP/1.1" 200 -
+2022-01-25 19:35:09,112 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:35:09] "GET /create HTTP/1.1" 200 -
+2022-01-25 19:35:48,571 DEBUG app : Cloud CNF created!
+2022-01-25 19:35:48,572 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:35:48] "POST /create HTTP/1.1" 302 -
+2022-01-25 19:35:48,820 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:35:48] "GET / HTTP/1.1" 200 -
+2022-01-25 19:36:00,224 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:36:00] "GET /healthz HTTP/1.1" 200 -
+2022-01-25 19:36:08,276 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:36:08] "GET /metrics HTTP/1.1" 200 -
+2022-01-25 19:37:55,032 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:37:55] "GET / HTTP/1.1" 200 -
+2022-01-25 19:37:58,942 DEBUG app :  404 page is returned
+2022-01-25 19:37:58,944 INFO werkzeug : 172.17.0.1 - - [25/Jan/2022 19:37:58] "GET /2000 HTTP/1.1" 404 -
