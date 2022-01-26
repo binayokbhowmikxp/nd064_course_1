@@ -4,7 +4,7 @@ metadata:
   labels:
     app: techtrends
   name: techtrends
-  namespace: sandbox
+  namespace: {{ .Values.namespace.name }}
 spec:
   replicas: 1
   selector:
@@ -16,22 +16,23 @@ spec:
         app: techtrends
     spec:
       containers:
-      - image: binayokbhowmikxp/techtrends:latest
+      - image: binayokbhowmikxp/{{ .Values.image.repository }}:{{ .Values.image.tag }}
         name: techtrends
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
-          - containerPort: 3111
+          - containerPort: {{ .Values.containerPort }}
         resources:
           limits:
-            cpu: "500m"
-            memory: "500Mi"
+            cpu: {{ .Values.resources.limits.cpu }}
+            memory: {{ .Values.resources.limits.memory }}
           requests:
-            cpu: "250m"
-            memory: "120Mi"
+            cpu: {{ .Values.resources.requests.cpu }}
+            memory: {{ .Values.resources.requests.memory }}
         readinessProbe:
          httpGet:
-          path: /healthz
-          port: 3111
+          path: {{ .Values.readinessProbe.path }}
+          port: {{ .Values.containerPort }}
         livenessProbe:
          httpGet:
-          path: /healthz
-          port: 3111
+          path: {{ .Values.livenessProbe.path }}
+          port: {{ .Values.containerPort }}
