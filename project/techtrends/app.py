@@ -103,5 +103,8 @@ def create():
 
 # start the application on port 3111
 if __name__ == "__main__":
-   logging.basicConfig(level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s : %(message)s')
+   standard_out = logging.StreamHandler(sys.stdout)
+   standard_error = logging.StreamHandler(sys.stderr)
+   handlers = [standard_error, standard_out]
+   logging.basicConfig(level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s : %(message)s',handlers=handlers)
    app.run(host='0.0.0.0', port='3111')
