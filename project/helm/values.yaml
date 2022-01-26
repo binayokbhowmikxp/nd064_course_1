@@ -10,7 +10,7 @@ service:
 image:
   repository: techtrends 
   tag: souvik
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 replicaCount: 1
 
