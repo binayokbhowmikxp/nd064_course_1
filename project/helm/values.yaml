@@ -9,7 +9,7 @@ service:
 
 image:
   repository: techtrends 
-  tag: latest
+  tag: souvik
   pullPolicy: IfNotPresent
 
 replicaCount: 1
